@@ -1,0 +1,28 @@
+:root{
+    --pink: #f800ec;
+    --white: #eeeeee;
+    --black: #222222;
+    --purple: #440092;
+    --font-title: 'serif';
+    --shawdow: rgba(0,0,0,0.25);
+    --font-primary: 'roboto';
+    --font-size-default: 16px;
+}
+
+*{  /* Esse codigo abaixo serve para dar um reset no site e ajustar as bordas padrão em diversos navegadores */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+a{
+    color: var(--gray);
+    text-decoration: underline;
+}
