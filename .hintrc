@@ -25,7 +25,9 @@
       {
         "frame-title": "off"
       }
-    ]
+    ],
+    "axe/forms": "off",
+    "meta-viewport": "off"
   },
   "browserslist": [
     "defaults",

@@ -1,14 +1,14 @@
-header{
-    background-image: url(../image/background-top.jpg);
+header {
+    background-image: url(../image/fundooo.jpg);
     background-size: cover;
     background-position: center top;
 }
 
-.header-main{
+.header-main {
     background-color: var(--shawdow);
 }
 
-.header-content{
+.header-content {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,48 +16,51 @@ header{
     min-height: 400px;
 }
 
-.header-text, 
-.header-logo{
-    width: 50%;
+.header-text,
+.header-logo {
+    width: 100%;
     color: var(--white);
-    padding: 50px;
+    padding: 80px;
 }
 
-.header-logo{
-    text-align: center; 
-    display: flex; 
+.header-text {
+    background-color: var(--shawdow);
+}
+
+.header-logo {
+    display: flex;
     align-items: center;
     justify-content: center;
-} 
+}
 
-.header-logo img{/*Essaclasseéparaalteraralogodaimagemdoladodireito*/
-    padding: 2px;
+.header-logo img {
+    padding: 5px;
     background-color: var(--purple);
     border-radius: 50%;
-} 
+}
 
 /* Navbar */
-nav ul{
+nav ul {
     display: flex;
     justify-content: center;
 }
 
-nav li{
+nav li {
     list-style: none;
 }
 
-.nav-top{
+.nav-top {
     line-height: 40px;
     background-color: var(--purple);
 }
 
-.nav-top li a{
+.nav-top li a {
     text-decoration: none;
     color: var(--white);
     padding: 10px 20px;
 }
 
-.nav-top li a:hover{   /* Essa tag hover serve para quando passar o mouse em cima do link ele mostra outra cor como se fosse uma caixa de cor para diferenciar */
+.nav-top li a:hover {
     color: var(--gray);
     background-color: var(--white);
     border-bottom: solid 4px var(--gray);
@@ -73,7 +76,7 @@ section {
 }
 
 h2 {
-    color: #6a1b9a;
+    color: var(--purple);
 }
 
 ul {
@@ -88,7 +91,7 @@ ul li {
 footer {
     text-align: center;
     padding: 15px 0;
-    background-color: #6a1b9a;
+    background-color: var(--purple);
     color: white;
     position: relative;
     bottom: 0;
@@ -101,17 +104,130 @@ iframe {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-img {
-    vertical-align: middle;
-    margin-left: 10px;
-    width: 25px; /* Ajuste conforme necessário */
-    height: 25px; /* Ajuste conforme necessário */
+
+/* Carrossel */
+.slider {
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
-    section {
-        margin: 10px;
-        padding: 15px;
-    }
+.slides {
+    width: 400%; /* 4 imagens, cada uma com 25% */
+    height: 400px;
+    display: flex;
+    transition: margin-left 0.5s ease; /* Adiciona transição ao movimento */
+}
+
+.slides input {
+    display: none; /* Esconde os botões de rádio */
+}
+
+.slide {
+    width: 25%; /* Cada slide ocupa 25% do espaço total */
+    position: relative;
+}
+
+.slide img {
+    width: 100%; /* Ajusta a largura da imagem ao contêiner */
+    display: block; /* Garante que a imagem seja exibida */
+}
+
+.manual-navigation {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px; /* Ajusta a posição dos botões de navegação */
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
+    background-color: #fff; /* Ajusta a cor para o hover */
+}
+
+/* Aqui está a lógica de transição */
+#radio1:checked ~ .slides {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .slides {
+    margin-left: -25%; /* Move 25% para a esquerda */
+}
+
+#radio3:checked ~ .slides {
+    margin-left: -50%; /* Move 50% para a esquerda */
+}
+
+#radio4:checked ~ .slides {
+    margin-left: -75%; /* Move 75% para a esquerda */
+}
+
+.navigation-auto {
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto div {
+    width: 20px;
+    height: 20px;
+    border: 2px solid blue;
+    border-radius: 50%;
+    margin: 0 10px;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+    background-color: white;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+    background-color: white;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+    background-color: white;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+    background-color: white;
+}
+
+ 
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o texto dentro da seção */
+}
+
+section img {
+    display: block; /* Faz com que a imagem seja um bloco */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+
+.localizacao h2 {
+    color: var(--purple);
+    text-align: center; /* Centraliza o título */
 }
